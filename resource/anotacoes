@@ -1,3 +1,42 @@
 Curso de Java 53: Enumeradores (Enum)
 
 	- Enum's garantem que um atributo de uma classe poderá apenas variar pelos valores declarados no enum.
+	
+
+Curso de Java 54: Enumeradores como classe (construtor e métodos)
+
+	- Enum's como classe necessitam de pelo menos um atributo e construtor.
+	- Enum's extends classe java.lang.Enum, por isso todos métodos estão disponíveis.
+	- Enum's Pode ser usando == para comparação, diferente para comparar objetos, que deve ser utilizado o .equals
+	- Enum's não são instanciados com 'new', já é feito implicitamente, na declaração do SEGUNDA(1) já está chamando o 'new'
+	- Enum's podem implementas classes
+	- Enum's não existe herança, apenas classes
+	- Enum's podem ser declarados dentro de outras classes
+	
+
+Curso de Java 55: Enum: métodos value e valueOf
+
+	- Enum's são como coleções de constantes
+	- O método values() traz todos os valores do Enum como um array.
+	- O método valueOf() traz o valor do Enum, passando o tipo de Enum e uma string qualquer, sendo que essa deve se igualar ao Enum.
+	
+
+Curso de Java 56: Enum: métodos abstratos
+
+	- É possivel declarar o método abstrato dentro do Enum.
+	- Podem ser utilizados para determinar o valor dos Enum declarados, após declarar a assinatura do método abstrato, você deverá implementar esse métodos no próprio Enum para
+	determinar o seu valor, pode ser um métodos orindo de outra classe também.
+	
+
+Curso de Java 57: Wrappers: classes de tipos primitivos
+
+	- Classe Wrappers empacotam tipos primitivos.
+	- Essas classes Wrappers tem métodos como 'parse...'.
+		Ex: 'Integer' tem o 'parseInt' que "parseia" o valor para integer de uma string, o mesmo para Double que tem o 'parseDouble' e etc
+	- Também possui o valueOf, seu objetivo é transformar um tipo primitivo para o da Classe sendo usado.
+		Ex: 'Integer.valueOf(214)' teremos um objeto do tipo Integer com valor '214'
+
+
+Curso de Java 58: Autoboxing e Unboxing
+
+	- 
