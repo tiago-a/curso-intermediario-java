@@ -37,6 +37,80 @@ Curso de Java 57: Wrappers: classes de tipos primitivos
 		Ex: 'Integer.valueOf(214)' teremos um objeto do tipo Integer com valor '214'
 
 
-Curso de Java 58: Autoboxing e Unboxing
+Curso de Java 58: Auto-Boxing e Auto-Unboxing
 
-	- 
+	- autoBoxing é criar um objeto a partir de um valor primitivo:
+		Ex: Integer numero = 14;
+	- autoUnboxingo é criar um tipo primitivo a partir de um objeto:
+		Ex int numero2 = numero14;
+	- autoBoxing em expressões;
+		Ex: numero++; ou seja numero = numero + 1;
+	- mau uso:
+		Ex: Double a, b, c;
+			a = 10;
+			b = 3;
+			c = 4;
+			
+			Double media = (a+b+c)/3;
+			
+		Nesse caso será feito 3 auto unboxing, depois o valor será calculado, depois será feito um auto boxing do resultado para a variável 'media'
+		
+		
+Curso de Java 59: Importação estática (static import)
+
+	- 'import static' serve para importar métodos staticos de classes no qual não é necessário utilizar o nome da classe.
+		Ex:
+			Math.pow(2,3)
+			
+			com 'import static'
+			
+			import static java.lang.Math.pow;
+			
+			pow(2,3)
+			
+		O código tem o mesmo resultado.
+		
+
+Curso de Java 60: Escopo de Variáveis
+
+	- Variáveis são acessíveis apenas no seu escopo.
+		Ex:
+			for (int i=0; i<10; i++){
+				...
+				System.out.println(i);
+				...
+			}
+			Variavel i é acessível em todo bloco for, fora desse bloco a variavel i não pode ser referenciavel
+		
+		
+Curso de Java 61: Passagem de parâmetros por valor e por referência
+
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
