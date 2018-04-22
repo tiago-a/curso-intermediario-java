@@ -85,7 +85,107 @@ Curso de Java 60: Escopo de Variáveis
 		
 Curso de Java 61: Passagem de parâmetros por valor e por referência
 
+	- Ao passar parametros em uma função copias são criadas, portanto, uma variável do tipo primitivo terá seu valor recriado, ou seja, qualquer mudança no valor da variavel
+	passada estará valendo apenas para o escopo da função, já se for passado um objeto, uma copia da referencia será passado, logo, uma mudança em um atributo do objeto terá
+	efeito no objeto original.
 	
+	Ex.:
+	
+		private void funcaFazAlgo(int valor, ClassMinha cl){
+			valor = valor + 10;
+			cl.setNome("Novo Nome");
+		}
+		
+		-> O valor fora do método continua com seu valor original
+		-> O nome do objeto cl mudará em todo escopo para "Novo Nome"
+		
+	- Referencia de memória é o equivalente a ponteiros em outras linguagens.
+	
+	
+Curso de Java 62: Varargs
+
+	- Permite N paramentros sem precisar declarar todos parametros.
+	- Aceita apenas parametros que sejam classes, no caso de utilizar primitivos, usar o seus respectivos wrappers (Ex: para int usar Integer, double usar Double etc...)
+	- O parametros do varags deve ser tratado como um vetor.
+	- O parametro varags deverá sempre ser o ultimo parametro declador
+		Ex:
+			ERRADO
+			public static void funcaoAqui(int a, Integer... valor, String s){
+				...
+			}
+			
+			CERTO
+			public static void funcaoAqui(int a,  String s, Integer... valor){
+				...
+			}
+			
+
+Curso de Java 63: printf
+
+	- utiliza-se o %x onde x é a letra que corresponde ao tipo dados
+		Ex: %s -> String, %S -> String em MAIUSCULO, %c -> char, %C -> char em MAIUSCULO
+	- utilizar '\n' para pular de linha não é uma boa prática, usar então o System.out.println() para pular uma linha
+	- Cheat Sheet:
+		%[flags][largura][.precisao]x
+		x -> caracter de transformação
+		
+		%p -> referencia a um objeto
+		%n -> pula linha (não usar %N)
+		%e -> notação cientifica
+
+
+Curso de Java 64: Classes aninhadas: internas, locais e anônimas
+
+	- Classes internas tem acesso aos atributos das classes externas
+	- Classes locais são classes criadas dentro de métodos, e devem ser instanciada no proprio método
+	- Classes anonimas são classes que quando instanciadas podem ter o seu comportamento alterado em tempo de execução
+		Ex: Anonima anonima = new Anonima(){
+				public void novoComportamento(){
+					...
+					faz coisas novas
+					...
+				}
+			};
+	- Classes anoimas podem implementar interfaces.
+	
+	- Para acesso a bancos evitar usar JDBC, e sim utilizar Hibernate ou JPA (boas práticas)
+	- Classes anonimas são muito utilizadas com Collections.
+	
+	
+Curso de Java 65: Annotations (anotações)
+
+	- São metadados, permitem embutir informações complementares no código fonte, essas informações podem ser consumidas de 3 formas diferentes:
+		1 - Informações para o compilador
+		2 - Runtime (em tempo de execução)
+		3 -	No momento de Compilar ou no momento de Deploy. (O container vai conseguir ler essas anotações e vai conseguir configurar adequadamente)
+	- São precedidas de @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+			
 		
 		
 		
