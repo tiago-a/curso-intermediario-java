@@ -1,3 +1,216 @@
 Curso de Java 53: Enumeradores (Enum)
 
 	- Enum's garantem que um atributo de uma classe poderá apenas variar pelos valores declarados no enum.
+	
+
+Curso de Java 54: Enumeradores como classe (construtor e métodos)
+
+	- Enum's como classe necessitam de pelo menos um atributo e construtor.
+	- Enum's extends classe java.lang.Enum, por isso todos métodos estão disponíveis.
+	- Enum's Pode ser usando == para comparação, diferente para comparar objetos, que deve ser utilizado o .equals
+	- Enum's não são instanciados com 'new', já é feito implicitamente, na declaração do SEGUNDA(1) já está chamando o 'new'
+	- Enum's podem implementas classes
+	- Enum's não existe herança, apenas classes
+	- Enum's podem ser declarados dentro de outras classes
+	
+
+Curso de Java 55: Enum: métodos value e valueOf
+
+	- Enum's são como coleções de constantes
+	- O método values() traz todos os valores do Enum como um array.
+	- O método valueOf() traz o valor do Enum, passando o tipo de Enum e uma string qualquer, sendo que essa deve se igualar ao Enum.
+	
+
+Curso de Java 56: Enum: métodos abstratos
+
+	- É possivel declarar o método abstrato dentro do Enum.
+	- Podem ser utilizados para determinar o valor dos Enum declarados, após declarar a assinatura do método abstrato, você deverá implementar esse métodos no próprio Enum para
+	determinar o seu valor, pode ser um métodos orindo de outra classe também.
+	
+
+Curso de Java 57: Wrappers: classes de tipos primitivos
+
+	- Classe Wrappers empacotam tipos primitivos.
+	- Essas classes Wrappers tem métodos como 'parse...'.
+		Ex: 'Integer' tem o 'parseInt' que "parseia" o valor para integer de uma string, o mesmo para Double que tem o 'parseDouble' e etc
+	- Também possui o valueOf, seu objetivo é transformar um tipo primitivo para o da Classe sendo usado.
+		Ex: 'Integer.valueOf(214)' teremos um objeto do tipo Integer com valor '214'
+
+
+Curso de Java 58: Auto-Boxing e Auto-Unboxing
+
+	- autoBoxing é criar um objeto a partir de um valor primitivo:
+		Ex: Integer numero = 14;
+	- autoUnboxingo é criar um tipo primitivo a partir de um objeto:
+		Ex int numero2 = numero14;
+	- autoBoxing em expressões;
+		Ex: numero++; ou seja numero = numero + 1;
+	- mau uso:
+		Ex: Double a, b, c;
+			a = 10;
+			b = 3;
+			c = 4;
+			
+			Double media = (a+b+c)/3;
+			
+		Nesse caso será feito 3 auto unboxing, depois o valor será calculado, depois será feito um auto boxing do resultado para a variável 'media'
+		
+		
+Curso de Java 59: Importação estática (static import)
+
+	- 'import static' serve para importar métodos staticos de classes no qual não é necessário utilizar o nome da classe.
+		Ex:
+			Math.pow(2,3)
+			
+			com 'import static'
+			
+			import static java.lang.Math.pow;
+			
+			pow(2,3)
+			
+		O código tem o mesmo resultado.
+		
+
+Curso de Java 60: Escopo de Variáveis
+
+	- Variáveis são acessíveis apenas no seu escopo.
+		Ex:
+			for (int i=0; i<10; i++){
+				...
+				System.out.println(i);
+				...
+			}
+			Variavel i é acessível em todo bloco for, fora desse bloco a variavel i não pode ser referenciavel
+		
+		
+Curso de Java 61: Passagem de parâmetros por valor e por referência
+
+	- Ao passar parametros em uma função copias são criadas, portanto, uma variável do tipo primitivo terá seu valor recriado, ou seja, qualquer mudança no valor da variavel
+	passada estará valendo apenas para o escopo da função, já se for passado um objeto, uma copia da referencia será passado, logo, uma mudança em um atributo do objeto terá
+	efeito no objeto original.
+	
+	Ex.:
+	
+		private void funcaFazAlgo(int valor, ClassMinha cl){
+			valor = valor + 10;
+			cl.setNome("Novo Nome");
+		}
+		
+		-> O valor fora do método continua com seu valor original
+		-> O nome do objeto cl mudará em todo escopo para "Novo Nome"
+		
+	- Referencia de memória é o equivalente a ponteiros em outras linguagens.
+	
+	
+Curso de Java 62: Varargs
+
+	- Permite N paramentros sem precisar declarar todos parametros.
+	- Aceita apenas parametros que sejam classes, no caso de utilizar primitivos, usar o seus respectivos wrappers (Ex: para int usar Integer, double usar Double etc...)
+	- O parametros do varags deve ser tratado como um vetor.
+	- O parametro varags deverá sempre ser o ultimo parametro declador
+		Ex:
+			ERRADO
+			public static void funcaoAqui(int a, Integer... valor, String s){
+				...
+			}
+			
+			CERTO
+			public static void funcaoAqui(int a,  String s, Integer... valor){
+				...
+			}
+			
+
+Curso de Java 63: printf
+
+	- utiliza-se o %x onde x é a letra que corresponde ao tipo dados
+		Ex: %s -> String, %S -> String em MAIUSCULO, %c -> char, %C -> char em MAIUSCULO
+	- utilizar '\n' para pular de linha não é uma boa prática, usar então o System.out.println() para pular uma linha
+	- Cheat Sheet:
+		%[flags][largura][.precisao]x
+		x -> caracter de transformação
+		
+		%p -> referencia a um objeto
+		%n -> pula linha (não usar %N)
+		%e -> notação cientifica
+
+
+Curso de Java 64: Classes aninhadas: internas, locais e anônimas
+
+	- Classes internas tem acesso aos atributos das classes externas
+	- Classes locais são classes criadas dentro de métodos, e devem ser instanciada no proprio método
+	- Classes anonimas são classes que quando instanciadas podem ter o seu comportamento alterado em tempo de execução
+		Ex: Anonima anonima = new Anonima(){
+				public void novoComportamento(){
+					...
+					faz coisas novas
+					...
+				}
+			};
+	- Classes anoimas podem implementar interfaces.
+	
+	- Para acesso a bancos evitar usar JDBC, e sim utilizar Hibernate ou JPA (boas práticas)
+	- Classes anonimas são muito utilizadas com Collections.
+	
+	
+Curso de Java 65: Annotations (anotações)
+
+	- São metadados, permitem embutir informações complementares no código fonte, essas informações podem ser consumidas de 3 formas diferentes:
+		1 - Informações para o compilador
+		2 - Runtime (em tempo de execução)
+		3 -	No momento de Compilar ou no momento de Deploy. (O container vai conseguir ler essas anotações e vai conseguir configurar adequadamente)
+	- São precedidas de @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
