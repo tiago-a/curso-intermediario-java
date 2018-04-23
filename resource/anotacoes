@@ -161,7 +161,11 @@ Curso de Java 65: Annotations (anotações)
 	- São precedidas de @
 
 
+Curso de Java 66: Garbage Collector (Coletor de Lixo)
 
+	- GC marca os objetos não utilizado na memória HEAP, em seguida remove os objetos e realoca os objetos ainda utilizado para uma melhor aproveitamento de
+	memória.
+	- Método finalize() marca objetos para serem coletados pelo GC
 
 
 
