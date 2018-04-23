@@ -14,7 +14,7 @@ public class ColetorLixo {
 
 	public static void main(String[] args) {
 		
-		Contato[] contatos = new Contato[10000000];
+		Contato[] contatos = new Contato[10000];
 		Contato contato;
 		for (int i=0; i<contatos.length; i++) {
 			contato = new Contato("Contato"+i, "2134"+i, "contato"+i+"@email.com");
