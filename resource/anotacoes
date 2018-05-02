@@ -165,7 +165,109 @@ Curso de Java 66: Garbage Collector (Coletor de Lixo)
 
 	- GC marca os objetos não utilizado na memória HEAP, em seguida remove os objetos e realoca os objetos ainda utilizado para uma melhor aproveitamento de
 	memória.
-	- Método finalize() marca objetos para serem coletados pelo GC
+	- Método finalize() marca objetos[classes executando] para serem coletados pelo GC
+
+
+Curso de Java 67: Threads + métodos start, run e sleep
+
+	- Thread é a menor unidade de código que pode ser executada. Em um programa pode se ter mais de um thread, ou seja, ao mesmo tempo pode se ter várias threads trabalhando
+	juntas.
+	- Para utilizar threads uma classe pode extender a classe Thread ou implementar a interface Runnable.
+
+
+Curso de Java 68: Threads: interface Runnable
+
+	- Não é necessário utilizar o método start().
+	- Após implementar a interface Runnable é preciso criar um Thread (com Thread thread = new Thread(aqui vai o objeto da classe que implementou a interface)), em seguida usar
+	o método start()
+	- É possivel instanciar a thread dentro do construtor da classe que implementa a interface runnable e lá mesmo usar o método .start().
+	- Ao extender a classe Thread você não pode extender outras classes, mas ao implementar a interface Runnable ainda se tem a opção de extender outras classes.
+	
+
+Curso de Java 69: Criando várias Threads + métodos isAlive e join
+
+	- Classes que implementam a interface Runnable não são Thread e sim representam uma instancia de execução de um Thread. Ainda é preciso instanciar a Thread passando a classe
+	que implementou a interface Runnable.
+	- isAlive é utilizado para receber um boolean se a thread ainda está viva ou não.
+	- o método join é utilizado para que a próxima thread a ser executada so começe após o fim da thread anterior ou só inicie depois do tempo passado como parametro no join
+
+
+Curso de Java 70: Threads: Definindo prioridadess
+
+	- O método setPriority define a prioridade de cada Thread, essa prioridade pode varias de 0 a 10, quanto maior a prioridade mais cedo será executado essa thread
+	- Nem sempre essas prioridades serão respeitadas, depende do OS e das config locais
+	- A classe Thread tem constantes como MAX_PRIORITY, NORM_PRIORITY, MIN_PRIORITY.
+
+
+Curso de Java 71: Threads: métodos e blocos sincronizados (synchronized)
+
+	- Sincronização é o ato de coordenar as atividades de duas ou mais Threads.
+	- Motivação: quando duas ou mais Threads tentam acessar o mesmo recurso ao mesmo tempo, com o synchronized é possível garatir que o recurso será acessado por um Thread
+	por vez.
+	
+	
+Curso de Java 72: Threads: notify, wait e notifyAll
+
+	- Método wait: bloqueia a execução da Thread e a coloca em espera até que seja notificada que pode voltar a executar
+	- Método notify: notifica Threads que estão no modo de espera para que voltem a serem executadas
+	- Método notifyAll: notifca todas as Threads que estão em espera
+	
+
+Curso de Java 73: Threads: suspend, resume e stop
+
+	- suspend: suspender temporariamente a execução da Thread
+	- resume: continua a execução da Thread
+	- stop: termina a execução da Thread (substituido pelo método interrupt)
+	*esses métodos foram retirados a parti da versão Java 2
+	
+	synchronized ( ) {
+		...
+	}
+	
+	- A palavra chave synchronized seguida de parentese mais a chaves significa que aquele bloco de código deve ser executado de forma sincronizada, dentro dele, as palavras
+	chaves notify, wait e notifyAll tem efeito, comportamento parecido com 'synchronized' em um método
+	- dentro do ()'s vai o recurso a ser sincronizado, pode se um tipo primitivo ou um objeto
+	
+	
+Curso de Java 74: Threads: deadlocks
+
+	- deadlock: A thread 1 bloqueia o objeto 1 e a thread 2 tenta acessar o objeto 1 mas não consegue por conta da thread 1, que desbloquearia o objeto 1 se pudesse a acessar
+	o objeto 2 mas a thread 2 bloqueia o objeto 2.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
 
 
 
