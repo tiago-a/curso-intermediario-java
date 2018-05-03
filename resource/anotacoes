@@ -235,7 +235,38 @@ Curso de Java 74: Threads: deadlocks
 	o objeto 2 mas a thread 2 bloqueia o objeto 2.
 	
 	
+Curso de Java 75: String: construtores
+
+	- Uma string inicializada a partir do seu construtor padrão [ new String() ] é o mesmo que inicializar uma string vazia [ "" ]
+	- Quando utilizamos o operador "new" para criação de uma String, o Java aloca nova memoria pra a nova variavel, porém se for atribuida de forma simple (ex: String s = "simples";) é checado se 
+	existe uma string com esse valor, caso sim, a nova string 's' apenas aponta o valor "simples"
 	
+
+Curso de Java 76: String: concatenação
+
+	- Para concatenar Strings é possivel usar apenas o sinal de "+"
+	- Strings são imutaveis, quando mudamos o valor de uma String, nos estamos na verdade criando uma nova string
+	- Concatenar Strings com "+" ou "+=" é uma prática, deixa o código lento
+	
+
+Curso de Java 77: String: extraindo chars (charAt, getChars, getBytes, toCharArray)
+
+	- charAt traz o charactere no indice indicado no método
+	
+	
+Curso de Java 78: String: equalsIgnoreCase, regionMatches, startsWith, endsWith, compareTo
+
+	- equals compara valores da String, o mesmo com equalsIgnoreCase, porém ignora se os caractéres são maisúculos ou minúsculos
+	
+
+Curso de Java 79: String: fazendo buscas (indexOf, lastIndexOf, contains)
+
+	- indexOf: procura por um caracter ou string em outra string, caso encontra retorna o indice do caracter, caso não encontre retorna -1
+	
+	
+Curso de Java 80: String: modificando uma String (substring, concat, replace, trim)
+
+	- replace: com o replace é possivel trocar o valor do primeiro caracter que combina com o caracter passado por parametro com outro caracter passado por parametro
 	
 	
 	
