@@ -302,6 +302,27 @@ Curso de Java 85: Classe Math
 Curso de Java 86: Classe Date (Data)
 
 	- Date date = new Date();	date.getTime() : traz o número de milisegundos de hoje desde 1 de jan de 1970
+	
+	
+Curso de Java 87: Classe Calendar
+
+	- Não é insatanciado com new, e sim com getInstance que retorna um singleton
+	
+	
+Curso de Java 88: Classe GregorianCalendar
+
+	- É uma subclase da classe Calendar (que por sua vez é uma classe abstrata)
+	- Contem o metodo isLeapYear para verificar se um ano é bisexto ou não, que na classe Calendar não tem.
+	
+	
+Curso de Java 89: Formatando datas com SimpleDateFormat
+
+	- É necessário passar um forma para formatar a data:
+		Ex: dd/MM/yyyy -> 04/05/2018
+			dd/MMM/yyyy -> 04/May/2018
+			
+
+Curso de Java 91: Formatando datas com DateFormat e Locale
 
 	
 	
