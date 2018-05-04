@@ -269,7 +269,40 @@ Curso de Java 80: String: modificando uma String (substring, concat, replace, tr
 	- replace: com o replace é possivel trocar o valor do primeiro caracter que combina com o caracter passado por parametro com outro caracter passado por parametro
 	
 	
+Curso de Java 81: String: modificando letras maiúsculas/minúsculas (toLowerCase, toUpperCase)
+
+	- toLowerCase: transforma todos os caracteres para minuscula
+	- toUpperCase: transforma todos os caracteres para maiuscula
 	
+	
+Curso de Java 82: String: juntando e separando String (join, split)
+
+	- join: Junta Strings (utiliza varargs)
+	- split: separa Strings
+	
+
+Curso de Java 83: concatenação com StringBuilder e StringBuffer
+
+	- StringBuilder: [NOT THREAD SAFE]
+	- StringBuffer: utilizada para reverter a ordem da string, deletar caracter [THREAD SAFE]
+	
+	
+Curso de Java 84: String Tokenizer
+
+	- Extrair informações de uma String grande
+	
+	
+Curso de Java 85: Classe Math
+
+	- Classe com suporte a funções matemáticas, senos, cossenos, valor absoluta, raiz quadrada etc...
+	- Números aleatórios também.
+	- Essa classe é muito simple e pode trazer erros, UTILIZAR outra classes como, BigNumber e BigDecimal.	
+	
+	
+Curso de Java 86: Classe Date (Data)
+
+	- Date date = new Date();	date.getTime() : traz o número de milisegundos de hoje desde 1 de jan de 1970
+
 	
 	
 	
